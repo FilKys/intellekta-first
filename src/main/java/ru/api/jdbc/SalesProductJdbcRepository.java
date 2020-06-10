@@ -1,10 +1,10 @@
-package api.jdbc;
+package ru.api.jdbc;
 
-import api.entity.SalesPeriodJdbcDemo;
-import api.jpa.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import ru.api.entity.Product;
+import ru.api.entity.SalesPeriodJdbcDemo;
 
 import java.util.List;
 

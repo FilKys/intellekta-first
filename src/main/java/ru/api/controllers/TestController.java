@@ -1,13 +1,13 @@
-package api.controllers;
+package ru.api.controllers;
 
-import api.entity.SalesPeriodJdbcDemo;
-import api.entity.SalesPeriodJpaDemo;
-import api.jdbc.SalesProductJdbcRepository;
-import api.jpa.Product;
-import api.jpa.ProductRepository;
-import api.jpa.SalesPeriodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import ru.api.entity.Product;
+import ru.api.entity.SalesPeriodJdbcDemo;
+import ru.api.entity.SalesPeriodJpaDemo;
+import ru.api.jdbc.SalesProductJdbcRepository;
+import ru.api.jpa.ProductRepository;
+import ru.api.jpa.SalesPeriodRepository;
 
 import java.util.List;
 

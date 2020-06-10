@@ -1,6 +1,5 @@
-package api.entity;
+package ru.api.entity;
 
-import api.jpa.Product;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

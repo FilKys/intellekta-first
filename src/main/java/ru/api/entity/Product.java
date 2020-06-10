@@ -1,4 +1,4 @@
-package api.jpa;
+package ru.api.entity;
 
 import lombok.Getter;
 import lombok.Setter;
