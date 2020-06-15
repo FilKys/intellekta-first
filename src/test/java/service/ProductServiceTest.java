@@ -13,7 +13,7 @@ import ru.api.exceptions.EntityAlreadyExistsException;
 import ru.api.exceptions.EntityHasDetailsException;
 import ru.api.exceptions.EntityIllegalArgumentException;
 import ru.api.exceptions.EntityNotFoundException;
-import ru.api.service.ProductService;
+import ru.api.service.impl.DefaultProductService;
 
 import java.util.List;
 
@@ -23,63 +23,63 @@ import java.util.List;
 public class ProductServiceTest {
 
     @Autowired
-    private ProductService productService;
+    private DefaultProductService defaultProductService;
 
     @Test
     public void findAllTest() {
-        List<Product> products = productService.findAll();
+        List<Product> products = defaultProductService.findAll();
         Assert.assertEquals(products.size(), 3);
     }
 
     @Test(expected = EntityIllegalArgumentException.class)
     public void findByIdNullId() {
-        productService.findById(null);
+        defaultProductService.findById(null);
     }
 
     @Test(expected = EntityIllegalArgumentException.class)
     public void findByIdNotInteger() {
-        productService.findById("aaa");
+        defaultProductService.findById("aaa");
     }
 
     @Test(expected = EntityNotFoundException.class)
     public void findByIdNotFound() {
-        productService.findById("1000");
+        defaultProductService.findById("1000");
     }
 
     @Test
     public void findBiIdTest() {
-        Product product = productService.findById("1");
+        Product product = defaultProductService.findById("1");
         Assert.assertNotNull(product);
     }
 
     @Test(expected = EntityIllegalArgumentException.class)
     public void createNullProductException() {
-        productService.create(null);
+        defaultProductService.create(null);
     }
 
     @Test(expected = EntityIllegalArgumentException.class)
     public void createNullProductIdException() {
-        productService.create(new Product(null, "aa"));
+        defaultProductService.create(new Product(null, "aa"));
     }
 
     @Test(expected = EntityAlreadyExistsException.class)
     public void createProductIdException() {
-        productService.create(new Product(1, "aa"));
+        defaultProductService.create(new Product(1, "aa"));
     }
 
     @Test
     public void createProductTest() {
-        productService.create(new Product(3, "car"));
+        defaultProductService.create(new Product(3, "car"));
     }
 
     @Test(expected = EntityHasDetailsException.class)
     public void deleteProductException() {
-        productService.delete("2");
+        defaultProductService.delete("2");
     }
 
     @Test
     public void deleteProductTest() {
-        productService.create(new Product(3, "car"));
-        productService.delete("3");
+        defaultProductService.create(new Product(3, "car"));
+        defaultProductService.delete("3");
     }
 }

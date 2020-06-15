@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EnableAutoConfiguration
 @EnableJpaRepositories(basePackages = {"ru.api.jpa"})
-@ComponentScan(basePackages = {"ru.api.service"})
+@ComponentScan(basePackages = {"ru.api.service.impl"})
 @EntityScan(basePackages = {"ru.api.entity"})
 public class TestConfig {
 
