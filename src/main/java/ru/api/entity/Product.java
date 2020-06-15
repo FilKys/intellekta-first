@@ -13,6 +13,9 @@ import javax.persistence.Table;
 @Getter
 @Setter
 public class Product {
+
+    public static String TYPE_NAME = "Продукт";
+
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
@@ -25,6 +28,22 @@ public class Product {
 
     public Product(Integer id, String name) {
         this.id = id;
+        this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 }
